@@ -6,60 +6,64 @@
 
     <title>BUNKER Casino · Neon demo games (no real money)</title>
     <meta name="description"
-          content="BUNKER Casino is a neon-soaked, credit-only demo casino. Play fake-money slots, blackjack and roulette in your browser. No signup, no deposits." />
+          content="BUNKER Casino is a neon-soaked, credit-only demo casino with slots, blackjack and roulette. No signup, no deposits, no real money." />
 
     <!-- Open Graph / social share -->
     <meta property="og:title" content="BUNKER Casino · Neon demo games" />
     <meta property="og:description"
           content="Play BUNKER Neon Slots, Blackjack and Roulette with demo credits only. No real money, no signup." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://1brus1.github.io/bunkercasino/" />
-    <meta property="og:image" content="https://1brus1.github.io/bunkercasino/bunker-banner.png" />
+    <meta property="og:url" content="https://1brus1.github.io/bunker-casino/" />
+    <meta property="og:image" content="https://1brus1.github.io/bunker-casino/bunker-banner.png" />
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="BUNKER Casino · Neon demo games" />
     <meta name="twitter:description"
           content="Neon-soaked, credit-only casino in your browser." />
-    <meta name="twitter:image" content="https://1brus1.github.io/bunkercasino/bunker-banner.png" />
+    <meta name="twitter:image" content="https://1brus1.github.io/bunker-casino/bunker-banner.png" />
 
-    <!-- Favicon / app icons -->
+    <!-- Favicon / app icons (all in root) -->
     <link rel="icon" href="favicon.png" type="image/png" />
     <link rel="apple-touch-icon" sizes="192x192" href="bunker-favicon-192.png" />
     <link rel="icon" sizes="512x512" href="bunker-favicon-512.png" />
 
+    <!-- Root CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Mobile Menu -->
+<!-- Mobile Menu (slide-in from right) -->
 <button id="mobile-menu-btn" class="mobile-menu-btn">☰</button>
 <div id="mobile-nav" class="mobile-nav">
   <button id="mobile-nav-close" class="mobile-nav-close">✕</button>
+  <a href="#home">Home</a>
   <a href="#slots">Slots</a>
   <a href="#blackjack">Blackjack</a>
   <a href="#roulette">Roulette</a>
-  <a href="#home">Home</a>
 </div>
 <div id="mobile-backdrop" class="mobile-backdrop"></div>
 
-    <div class="bg-overlay"></div>
+<div class="page">
 
+    <!-- HEADER / NAV -->
     <header class="site-header">
-        <a href="#home" class="logo">
-            <div class="logo-mark">B</div>
-            <div class="logo-text">
-                <span class="logo-title">BUNKER</span>
-                <span class="logo-subtitle">CASINO</span>
-            </div>
-        </a>
+        <div class="header-inner">
+            <a href="#home" class="brand">
+                <div class="logo-circle">
+                    <span class="logo-letter">B</span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-main">BUNKER</span>
+                    <span class="brand-sub">CASINO</span>
+                </div>
+            </a>
 
-        <div class="header-right">
             <nav class="nav">
-                <a href="#home">Home</a>
-                <a href="#slots">Slots</a>
-                <a href="#blackjack">Blackjack</a>
-                <a href="#roulette">Roulette</a>
+                <a href="#home">HOME</a>
+                <a href="#slots">SLOTS</a>
+                <a href="#blackjack">BLACKJACK</a>
+                <a href="#roulette">ROULETTE</a>
             </nav>
 
             <button class="settings-btn" id="settings-btn" aria-label="Open settings">
@@ -68,7 +72,7 @@
         </div>
     </header>
 
-    <!-- STICKY GAMES CATEGORIES UNDER HEADER -->
+    <!-- STICKY GAME SHORTCUTS -->
     <div class="games-nav sticky-games-nav">
       <div class="games-nav-row">
         <a href="#slots" class="games-nav-item games-nav-item-slots">
@@ -78,356 +82,349 @@
         </a>
 
         <a href="#blackjack" class="games-nav-item games-nav-item-blackjack">
-          <span class="games-nav-category games-nav-category-table games-nav-category-blackjack">Table game</span>
+          <span class="games-nav-category games-nav-category-table">Table</span>
           <span class="games-nav-label">Blackjack</span>
           <span class="games-nav-caption">Beat the dealer</span>
         </a>
 
         <a href="#roulette" class="games-nav-item games-nav-item-roulette">
-          <span class="games-nav-category games-nav-category-table games-nav-category-roulette">Table game</span>
+          <span class="games-nav-category games-nav-category-table">Table</span>
           <span class="games-nav-label">Roulette</span>
           <span class="games-nav-caption">European wheel</span>
         </a>
       </div>
     </div>
 
-    <main>
-        <!-- HOME / HERO -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Welcome to <span>BUNKER</span> CASINO</h1>
-                <p class="hero-subtitle">
-                    Neon-soaked, credit-only casino. No real money. Pure vibes.
-                </p>
-                <div class="hero-actions">
-                    <a href="#slots" class="primary-btn">Play Slots</a>
-                    <button class="secondary-btn" id="add-credits-btn">
-                        + Add Demo Credits
-                    </button>
-                    <button class="secondary-btn" id="reset-credits-btn">
-                        Reset progress
-                    </button>
-                </div>
-                <div class="hero-metrics">
-                    <div class="metric-card">
-                        <span class="metric-label">Your credits</span>
-                        <span class="metric-value" id="credits-hero">0</span>
-                    </div>
-                    <div class="metric-card">
-                        <span class="metric-label">RTP (fake)</span>
-                        <span class="metric-value">96%</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PLAYER STATS -->
-        <section class="stats-section">
-            <h2 class="section-title">Player stats</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-label">Total slot spins</span>
-                    <span class="stat-value" id="stat-total-spins">0</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">Total blackjack hands</span>
-                    <span class="stat-value" id="stat-total-bj-hands">0</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">Blackjack wins</span>
-                    <span class="stat-value" id="stat-total-bj-wins">0</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">Total roulette spins</span>
-                    <span class="stat-value" id="stat-total-rou-spins">0</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">Roulette wins</span>
-                    <span class="stat-value" id="stat-total-rou-wins">0</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">Biggest win</span>
-                    <span class="stat-value" id="stat-biggest-win">0</span>
-                </div>
-            </div>
-
-            <p class="stats-session">
-                Session change:
-                <span id="stat-session-net">0</span>
-                credits
+    <!-- HERO / HOME -->
+    <main id="home" class="hero">
+        <div class="hero-main">
+            <h1 class="hero-title">
+                Welcome to <span class="neon-green">BUNKER</span> CASINO
+            </h1>
+            <p class="hero-subtitle">
+                Neon-soaked, credit-only casino. No real money. Pure vibes.
             </p>
 
-            <!-- Recent activity -->
-            <div class="history-section">
-                <h3 class="history-title">Recent activity</h3>
-                <p class="history-empty" id="history-empty">
-                    No games played yet. Spins, hands, and bets will show up here.
-                </p>
-                <ul class="history-list" id="history-list"></ul>
-            </div>
-        </section>
-
-        <!-- GAMES GRID SECTION (optional marketing cards) -->
-        <section class="games-grid-section">
-            <h2 class="section-title">Games overview</h2>
-            <div class="games-grid">
-                <article class="game-card">
-                    <div class="game-tag">Featured</div>
-                    <h3>BUNKER Neon Slots</h3>
-                    <p>
-                        Classic 3-reel slot machine with glowing symbols,
-                        smooth spins, and demo credits. No signup, no deposits.
-                    </p>
-                    <ul class="game-meta">
-                        <li>3 reels</li>
-                        <li>Fake credits only</li>
-                        <li>Neon visual style</li>
-                    </ul>
-                    <a href="#slots" class="primary-btn small">Play now</a>
-                </article>
-
-                <article class="game-card">
-                    <div class="game-tag">New</div>
-                    <h3>BUNKER Blackjack</h3>
-                    <p>Sleek blackjack table with demo credits. Hit, stand, and beat the dealer.</p>
-                    <ul class="game-meta">
-                        <li>Single hand</li>
-                        <li>Uses same credits</li>
-                        <li>Simple rules</li>
-                    </ul>
-                    <a href="#blackjack" class="primary-btn small">Play now</a>
-                </article>
-
-                <article class="game-card">
-                    <div class="game-tag">New</div>
-                    <h3>BUNKER Roulette</h3>
-                    <p>European wheel with color bets and bold neon highlights.</p>
-                    <ul class="game-meta">
-                        <li>Fake credits only</li>
-                        <li>Bet on red / black / green</li>
-                        <li>Shared balance</li>
-                    </ul>
-                    <a href="#roulette" class="primary-btn small">Play now</a>
-                </article>
-            </div>
-        </section>
-
-        <!-- SLOTS SECTION -->
-        <section id="slots" class="slots-section">
-            <div class="slots-card neon-border">
-                <div class="slots-header">
-                    <div>
-                        <h2 class="slots-title">BUNKER Neon Slots</h2>
-                        <p class="slots-subtitle">Bet credits, spin reels, chase triples.</p>
-                    </div>
-                    <div class="slots-credits">
-                        <span>Credits</span>
-                        <strong id="credits">0</strong>
-
-                        <div class="last-win-chip">
-                            <span class="last-win-label">Last win</span>
-                            <span class="last-win-value" id="last-win">0</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slots-body">
-                    <div class="slot-machine">
-                        <div class="reel-wrapper">
-                            <div class="reel" id="reel1"></div>
-                        </div>
-                        <div class="reel-wrapper">
-                            <div class="reel" id="reel2"></div>
-                        </div>
-                        <div class="reel-wrapper">
-                            <div class="reel" id="reel3"></div>
-                        </div>
-                    </div>
-
-                    <div class="slots-controls">
-                        <div class="bet-control">
-                            <span>Bet per spin</span>
-                            <div class="bet-input">
-                                <button id="bet-decrease">-</button>
-                                <span id="bet-amount">10</span>
-                                <button id="bet-increase">+</button>
-                            </div>
-                        </div>
-                        <button id="spin-btn" class="primary-btn large">
-                            SPIN
-                        </button>
-                    </div>
-                </div>
-
-                <div class="slots-footer">
-                    <div class="payout-table">
-                        <div class="payout-row">
-                            <span class="symbol-demo symbol-seven"></span>
-                            <span>Triple 7</span>
-                            <span class="payout-multiplier">x50</span>
-                        </div>
-                        <div class="payout-row">
-                            <span class="symbol-demo symbol-star"></span>
-                            <span>Triple Star</span>
-                            <span class="payout-multiplier">x25</span>
-                        </div>
-                        <div class="payout-row">
-                            <span class="symbol-demo symbol-cherry"></span>
-                            <span>Triple Cherry</span>
-                            <span class="payout-multiplier">x10</span>
-                        </div>
-                        <div class="payout-row">
-                            <span class="symbol-demo symbol-bar"></span>
-                            <span>Triple BAR / others</span>
-                            <span class="payout-multiplier">x5</span>
-                        </div>
-                    </div>
-                    <div class="message" id="message"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- BLACKJACK SECTION -->
-        <section id="blackjack" class="blackjack-section">
-            <div class="blackjack-card neon-border">
-                <div class="blackjack-header">
-                    <div>
-                        <h2 class="blackjack-title">BUNKER Blackjack</h2>
-                        <p class="blackjack-subtitle">Standard rules, demo credits, single hand vs dealer.</p>
-                    </div>
-                    <div class="blackjack-credits">
-                        <span>Credits</span>
-                        <strong id="bj-credits-mirror">0</strong>
-                    </div>
-                </div>
-
-                <div class="blackjack-body">
-                    <div class="blackjack-table">
-                        <div class="bj-row">
-                            <div class="bj-label">Dealer</div>
-                            <div class="bj-hand" id="bj-dealer-hand"></div>
-                            <div class="bj-score" id="bj-dealer-score"></div>
-                        </div>
-                        <div class="bj-row">
-                            <div class="bj-label">Player</div>
-                            <div class="bj-hand" id="bj-player-hand"></div>
-                            <div class="bj-score" id="bj-player-score"></div>
-                        </div>
-                    </div>
-
-                    <div class="blackjack-controls">
-                        <div class="bet-control">
-                            <span>Bet per hand</span>
-                            <div class="bet-input">
-                                <button id="bj-bet-decrease">-</button>
-                                <span id="bj-bet-amount">10</span>
-                                <button id="bj-bet-increase">+</button>
-                            </div>
-                        </div>
-                        <div class="bj-buttons">
-                            <button id="bj-deal-btn" class="secondary-btn">Deal</button>
-                            <button id="bj-hit-btn" class="secondary-btn" disabled>Hit</button>
-                            <button id="bj-stand-btn" class="primary-btn small" disabled>Stand</button>
-                        </div>
-                    </div>
-
-                    <div class="bj-message" id="bj-message"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ROULETTE SECTION -->
-        <section id="roulette" class="roulette-section">
-            <div class="roulette-card neon-border">
-                <div class="roulette-header">
-                    <div>
-                        <h2 class="roulette-title">BUNKER Roulette</h2>
-                        <p class="roulette-subtitle">European wheel with red / black / green color bets.</p>
-                    </div>
-                    <div class="roulette-credits">
-                        <span>Credits</span>
-                        <strong id="rou-credits-mirror">0</strong>
-                    </div>
-                </div>
-
-                <div class="roulette-body">
-                    <div class="roulette-layout">
-                        <div class="roulette-wheel" id="roulette-wheel">
-                            <div class="roulette-wheel-inner"></div>
-                        </div>
-
-                        <div class="roulette-controls">
-                            <div class="bet-control">
-                                <span>Bet per spin</span>
-                                <div class="bet-input">
-                                    <button id="rou-bet-decrease">-</button>
-                                    <span id="rou-bet-amount">10</span>
-                                    <button id="rou-bet-increase">+</button>
-                                </div>
-                            </div>
-
-                            <div class="roulette-colors">
-                                <span class="game-label roulette-label">Bet on color</span>
-                                <div class="roulette-color-buttons">
-                                    <button class="roulette-color-btn active" id="rou-color-red">Red</button>
-                                    <button class="roulette-color-btn" id="rou-color-black">Black</button>
-                                    <button class="roulette-color-btn" id="rou-color-green">Green</button>
-                                </div>
-                            </div>
-
-                            <button id="rou-spin-btn" class="primary-btn large">Spin wheel</button>
-                        </div>
-                    </div>
-
-                    <div class="roulette-footer">
-                        <div class="roulette-result">
-                            <span class="game-label roulette-label">Last result</span>
-                            <span class="roulette-result-value" id="rou-last-result">–</span>
-                        </div>
-                        <div class="roulette-history">
-                            <span class="game-label roulette-label">History</span>
-                            <div class="roulette-history-list" id="rou-history-list"></div>
-                        </div>
-                        <div class="roulette-message" id="rou-message"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- SETTINGS PANEL -->
-    <div class="settings-overlay" id="settings-overlay">
-        <div class="settings-panel">
-            <div class="settings-header">
-                <h2 class="settings-title">Settings</h2>
-                <button class="settings-close" id="settings-close-btn" aria-label="Close settings">
-                    ×
+            <div class="hero-actions">
+                <button class="primary-btn hero-btn" onclick="document.getElementById('slots').scrollIntoView({behavior:'smooth'})">
+                    PLAY SLOTS
+                </button>
+                <button id="add-credits-btn" class="secondary-btn hero-btn">
+                    + ADD DEMO CREDITS
+                </button>
+                <button id="reset-credits-btn" class="secondary-btn hero-btn">
+                    RESET PROGRESS
                 </button>
             </div>
 
-            <div class="settings-body">
-                <div class="setting-row">
-                    <div>
-                        <div class="setting-label">Sound effects</div>
-                        <div class="setting-help">Turn all game sounds on or off.</div>
-                    </div>
-                    <button type="button" class="toggle" id="setting-sound-toggle">
-                        <span class="toggle-knob"></span>
-                    </button>
+            <div class="hero-metrics">
+                <div class="metric-card">
+                    <span class="metric-label">YOUR CREDITS</span>
+                    <span class="metric-value" id="credits-hero">0</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">RTP (FAKE)</span>
+                    <span class="metric-value">96%</span>
+                </div>
+            </div>
+        </div>
+
+        <aside class="player-panel">
+            <h2 class="panel-title">Player stats</h2>
+            <div class="panel-grid">
+                <div class="panel-item">
+                    <span class="panel-label">Total slots spins</span>
+                    <span class="panel-value" id="stat-total-spins">0</span>
+                </div>
+                <div class="panel-item">
+                    <span class="panel-label">Blackjack hands</span>
+                    <span class="panel-value" id="stat-total-bj-hands">0</span>
+                </div>
+                <div class="panel-item">
+                    <span class="panel-label">Blackjack wins</span>
+                    <span class="panel-value" id="stat-total-bj-wins">0</span>
+                </div>
+                <div class="panel-item">
+                    <span class="panel-label">Roulette spins</span>
+                    <span class="panel-value" id="stat-total-rou-spins">0</span>
+                </div>
+                <div class="panel-item">
+                    <span class="panel-label">Roulette wins</span>
+                    <span class="panel-value" id="stat-total-rou-wins">0</span>
+                </div>
+                <div class="panel-item">
+                    <span class="panel-label">Biggest win</span>
+                    <span class="panel-value" id="stat-biggest-win">0</span>
+                </div>
+                <div class="panel-item">
+                    <span class="panel-label">Session change</span>
+                    <span class="panel-value" id="stat-session-net">0</span>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <div class="recent-header">
+                    <span>Recent activity</span>
+                </div>
+                <div id="history-empty" class="history-empty">
+                    No activity yet. Spin or play a hand to start.
+                </div>
+                <ul id="history-list" class="history-list"></ul>
+            </div>
+        </aside>
+    </main>
+
+    <!-- GAME OVERVIEW CARDS -->
+    <section class="games-overview">
+        <h2 class="section-title">Games overview</h2>
+
+        <article class="game-card game-card-slots">
+            <div class="game-label slots-label">SLOTS</div>
+            <h3 class="game-title">BUNKER Neon Slots</h3>
+            <p class="game-subtitle">Classic 3-reel slot with glowing symbols, smooth spins and demo credits.</p>
+            <ul class="game-tags">
+                <li>3 reels</li>
+                <li>Fake credits only</li>
+                <li>Neon visual style</li>
+            </ul>
+            <button class="primary-btn" onclick="document.getElementById('slots').scrollIntoView({behavior:'smooth'})">
+                PLAY NOW
+            </button>
+        </article>
+
+        <article class="game-card game-card-bj">
+            <div class="game-label table-label">TABLE GAME</div>
+            <h3 class="game-title">Blackjack</h3>
+            <p class="game-subtitle">Beat the dealer with simple, fast demo hands.</p>
+            <ul class="game-tags">
+                <li>Single hand</li>
+                <li>Uses same credits</li>
+                <li>Simple rules</li>
+            </ul>
+            <button class="primary-btn" onclick="document.getElementById('blackjack').scrollIntoView({behavior:'smooth'})">
+                PLAY NOW
+            </button>
+        </article>
+
+        <article class="game-card game-card-rou">
+            <div class="game-label roulette-label">TABLE GAME</div>
+            <h3 class="game-title">Roulette</h3>
+            <p class="game-subtitle">European wheel with demo chips and quick spins.</p>
+            <button class="primary-btn" onclick="document.getElementById('roulette').scrollIntoView({behavior:'smooth'})">
+                PLAY NOW
+            </button>
+        </article>
+    </section>
+
+    <!-- SLOTS SECTION -->
+    <section id="slots" class="section section-slots">
+        <header class="section-header">
+            <div>
+                <h2>Neon Slots</h2>
+                <p>Spin the 3-reel BUNKER machine with demo credits only.</p>
+            </div>
+            <div class="section-credits">
+                <span>Your credits:</span>
+                <span id="credits">0</span>
+            </div>
+        </header>
+
+        <div class="slots-layout">
+            <div class="slots-machine">
+                <div class="slots-reels">
+                    <div class="reel" id="reel1"></div>
+                    <div class="reel" id="reel2"></div>
+                    <div class="reel" id="reel3"></div>
                 </div>
 
-                <div class="setting-row">
-                    <div>
-                        <div class="setting-label">Fast mode</div>
-                        <div class="setting-help">Shorter slot and roulette spins.</div>
+                <div class="slots-status">
+                    <div class="status-item">
+                        <span class="status-label">Last result</span>
+                        <span class="status-value" id="message">Ready</span>
                     </div>
-                    <button type="button" class="toggle" id="setting-fast-toggle">
-                        <span class="toggle-knob"></span>
+                    <div class="status-item">
+                        <span class="status-label">Last win</span>
+                        <span class="status-value" id="last-win">0</span>
+                    </div>
+                </div>
+
+                <div class="slots-controls">
+                    <div class="bet-control">
+                        <span>Bet per spin</span>
+                        <div class="bet-input">
+                            <button id="bet-decrease">-</button>
+                            <span id="bet-amount">10</span>
+                            <button id="bet-increase">+</button>
+                        </div>
+                    </div>
+                    <button id="spin-btn" class="primary-btn large">
+                        SPIN
                     </button>
                 </div>
             </div>
 
-            <p class="settings-note">Settings are saved only on this device.</p>
+            <div class="slots-footer">
+                <div class="payout-table">
+                    <div class="payout-row">
+                        <span class="symbol-demo symbol-seven"></span>
+                        <span>Triple 7</span>
+                        <span class="payout-multiplier">x50</span>
+                    </div>
+                    <div class="payout-row">
+                        <span class="symbol-demo symbol-star"></span>
+                        <span>Triple Star</span>
+                        <span class="payout-multiplier">x25</span>
+                    </div>
+                    <div class="payout-row">
+                        <span class="symbol-demo symbol-cherry"></span>
+                        <span>Triple Cherry</span>
+                        <span class="payout-multiplier">x10</span>
+                    </div>
+                    <div class="payout-row">
+                        <span class="symbol-demo symbol-bar"></span>
+                        <span>Triple BAR</span>
+                        <span class="payout-multiplier">x5</span>
+                    </div>
+                    <div class="payout-row">
+                        <span class="symbol-demo symbol-diamond"></span>
+                        <span>Triple Diamond</span>
+                        <span class="payout-multiplier">x5</span>
+                    </div>
+                    <div class="payout-row">
+                        <span class="symbol-demo symbol-lemon"></span>
+                        <span>Triple Lemon</span>
+                        <span class="payout-multiplier">x5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLACKJACK SECTION -->
+    <section id="blackjack" class="section section-bj">
+        <header class="section-header">
+            <div>
+                <h2>Blackjack</h2>
+                <p>Hit, stand and beat the dealer with demo credits.</p>
+            </div>
+            <div class="section-credits">
+                <span>Your credits:</span>
+                <span id="bj-credits-mirror">0</span>
+            </div>
+        </header>
+
+        <div class="bj-layout">
+            <div class="bj-table">
+                <div class="bj-row">
+                    <h3>Dealer</h3>
+                    <div id="bj-dealer-hand" class="bj-hand"></div>
+                    <div class="bj-score">
+                        Score: <span id="bj-dealer-score">0</span>
+                    </div>
+                </div>
+                <div class="bj-row">
+                    <h3>You</h3>
+                    <div id="bj-player-hand" class="bj-hand"></div>
+                    <div class="bj-score">
+                        Score: <span id="bj-player-score">0</span>
+                    </div>
+                </div>
+                <div id="bj-message" class="bj-message">Place a bet and deal.</div>
+
+                <div class="bj-controls">
+                    <div class="bet-control">
+                        <span>Bet per hand</span>
+                        <div class="bet-input">
+                            <button id="bj-bet-decrease">-</button>
+                            <span id="bj-bet-amount">10</span>
+                            <button id="bj-bet-increase">+</button>
+                        </div>
+                    </div>
+                    <div class="bj-buttons">
+                        <button id="bj-deal-btn" class="primary-btn">DEAL</button>
+                        <button id="bj-hit-btn" class="secondary-btn">HIT</button>
+                        <button id="bj-stand-btn" class="secondary-btn">STAND</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROULETTE SECTION -->
+    <section id="roulette" class="section section-roulette">
+        <header class="section-header">
+            <div>
+                <h2>Roulette</h2>
+                <p>European wheel with demo chips and ball history.</p>
+            </div>
+            <div class="section-credits">
+                <span>Your credits:</span>
+                <span id="rou-credits-mirror">0</span>
+            </div>
+        </header>
+
+        <div class="rou-layout">
+            <div class="rou-board">
+                <div id="roulette-wheel" class="roulette-wheel"></div>
+
+                <div class="rou-controls">
+                    <div class="rou-bet-group">
+                        <span class="bet-label">Outside bets</span>
+                        <div class="chip-row">
+                            <button id="rou-low" class="chip">1-18</button>
+                            <button id="rou-high" class="chip">19-36</button>
+                            <button id="rou-even" class="chip">Even</button>
+                            <button id="rou-odd" class="chip">Odd</button>
+                        </div>
+                        <div class="chip-row">
+                            <button id="rou-color-red" class="chip chip-red">Red</button>
+                            <button id="rou-color-black" class="chip chip-black">Black</button>
+                            <button id="rou-color-green" class="chip chip-green">Zero</button>
+                        </div>
+                    </div>
+
+                    <div class="rou-actions">
+                        <button id="rou-clear-bets" class="secondary-btn small">CLEAR</button>
+                        <button id="rou-spin-btn" class="primary-btn">SPIN WHEEL</button>
+                    </div>
+
+                    <div class="rou-status">
+                        <div>
+                            <span class="status-label">Last result:</span>
+                            <span id="rou-last-result" class="status-value">–</span>
+                        </div>
+                        <div>
+                            <span class="status-label">Message:</span>
+                            <span id="rou-message" class="status-value">Place your bets.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="rou-history-panel">
+                <h3>Ball history</h3>
+                <ul id="rou-history-list" class="rou-history-list"></ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- SETTINGS MODAL -->
+    <div id="settings-overlay" class="settings-overlay">
+        <div class="settings-modal">
+            <div class="settings-header">
+                <h2>Settings</h2>
+                <button id="settings-close-btn" class="settings-close">✕</button>
+            </div>
+            <div class="settings-body">
+                <div class="settings-item">
+                    <span>Sound effects</span>
+                    <button id="setting-sound-toggle" class="toggle-btn">ON</button>
+                </div>
+                <div class="settings-item">
+                    <span>Fast spins</span>
+                    <button id="setting-fast-toggle" class="toggle-btn">OFF</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -436,11 +433,14 @@
         <p>&copy; <span id="year"></span> BUNKER.</p>
     </footer>
 
-    <!-- Sound effects -->
-    <audio id="sound-spin" src="sound-spin.wav" preload="auto"></audio>
-    <audio id="sound-win" src="sound-win.wav" preload="auto"></audio>
-    <audio id="sound-click" src="sound-click.wav" preload="auto"></audio>
+</div> <!-- /page wrapper -->
 
-    <script src="script.js"></script>
+<!-- Root sound files -->
+<audio id="sound-spin" src="sound-spin.wav" preload="auto"></audio>
+<audio id="sound-win" src="sound-win.wav" preload="auto"></audio>
+<audio id="sound-click" src="sound-click.wav" preload="auto"></audio>
+
+<!-- Root JS -->
+<script src="script.js"></script>
 </body>
-</html>
+        </html>
