@@ -1,85 +1,40 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clothing Store</title>
-    <link rel="stylesheet" href="style.css" />
+  <title>KOCKAR TIPS</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<header>
+  <img src="assets/img/logo.svg">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="tips.html">Tips</a>
+    <a href="results.html">Results</a>
+    <a href="stats.html">Stats</a>
+  </nav>
+</header>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="logo">FashionFit</div>
+<h2 style="text-align:center; margin-top:28px;">Today's Tips</h2>
 
-        <nav class="nav">
-            <ul>
-                <li><a href="#">New Arrivals</a></li>
-                <li><a href="#">Women</a></li>
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Sale</a></li>
-            </ul>
-        </nav>
+<div class="card">
+  <div class="match">Barcelona vs Real Madrid</div>
+  <div class="odds">
+    <div>1.85</div>
+    <div>Draw 3.2</div>
+    <div>2.10</div>
+  </div>
+</div>
 
-        <div class="icons">
-            <div id="cart-btn" class="cart-icon">🛒 <span id="cart-count">0</span></div>
-            <div id="menu-btn" class="menu-icon">☰</div>
-        </div>
-    </header>
+<div class="card">
+  <div class="match">PSG vs Monaco</div>
+  <div class="odds">
+    <div>1.55</div>
+    <div>4.0</div>
+    <div>5.2</div>
+  </div>
+</div>
 
-    <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="mobile-menu hidden">
-        <a href="#">New Arrivals</a>
-        <a href="#">Women</a>
-        <a href="#">Men</a>
-        <a href="#">Sale</a>
-    </div>
-
-    <!-- PRODUCT SECTION -->
-    <section class="product-section">
-        <div class="gallery">
-            <img id="main-img" src="https://via.placeholder.com/500x600?text=Hoodie+1" class="main-img"/>
-
-            <div class="thumbs">
-                <img src="https://via.placeholder.com/500x600?text=Hoodie+1" class="thumb active"/>
-                <img src="https://via.placeholder.com/500x600?text=Hoodie+2" class="thumb"/>
-                <img src="https://via.placeholder.com/500x600?text=Hoodie+3" class="thumb"/>
-                <img src="https://via.placeholder.com/500x600?text=Hoodie+4" class="thumb"/>
-            </div>
-        </div>
-
-        <div class="product-info">
-            <h1>Classic Oversized Hoodie</h1>
-            <p class="price">$59.99</p>
-
-            <p class="desc">
-                Premium cotton hoodie with oversized fit, clean stitching, soft inside lining,  
-                perfect for any casual outfit.
-            </p>
-
-            <label>Size:</label>
-            <div class="sizes">
-                <button class="size">S</button>
-                <button class="size">M</button>
-                <button class="size">L</button>
-                <button class="size">XL</button>
-            </div>
-
-            <button id="add-to-cart" class="add-btn">Add to Cart</button>
-        </div>
-    </section>
-
-    <!-- CART SIDEBAR -->
-    <aside id="cart-sidebar" class="cart-sidebar hidden">
-        <h2>Your Cart</h2>
-        <div id="cart-items"></div>
-
-        <div class="cart-footer">
-            <p>Total: $<span id="cart-total">0</span></p>
-            <button class="checkout-btn">Checkout</button>
-        </div>
-    </aside>
-
-    <script src="script.js"></script>
 </body>
 </html>
