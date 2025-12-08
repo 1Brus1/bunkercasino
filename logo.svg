@@ -2,14 +2,14 @@
 <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
-  <circle cx="150" cy="150" r="110" stroke="#3aaaff" stroke-width="8" fill="none" filter="url(#glow)"/>
+  <circle cx="150" cy="150" r="110" stroke="#76c3ff" stroke-width="7" fill="none" filter="url(#glow)"/>
   <text x="50%" y="54%" text-anchor="middle" fill="#ffffff" font-size="42" font-family="Inter" font-weight="600">KOCKAR</text>
-  <text x="50%" y="67%" text-anchor="middle" fill="#3aaaff" font-size="32" font-family="Inter" font-weight="600">TIPS</text>
+  <text x="50%" y="68%" text-anchor="middle" fill="#76c3ff" font-size="32" font-family="Inter" font-weight="600">TIPS</text>
 </svg>

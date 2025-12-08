@@ -2,55 +2,80 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0d0f12;
-  color: #e8e8e8;
+  background: #0c0e11;
+  color: #e7e7e7;
 }
 
 header {
   display: flex;
   align-items: center;
-  padding: 18px 22px;
-  background: #0c0e11;
-  border-bottom: 1px solid #1a1f24;
+  padding: 20px 26px;
+  background: #0b0d10;
+  border-bottom: 1px solid #1a1d21;
 }
 
 header img {
-  width: 42px;
-  margin-right: 12px;
+  width: 40px;
+  margin-right: 14px;
 }
 
 nav a {
-  color: #6ab8ff;
-  margin-right: 18px;
+  color: #76c3ff;
+  margin-right: 22px;
   text-decoration: none;
   font-weight: 500;
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 34px;
+  font-size: 26px;
+  font-weight: 600;
 }
 
 .card {
-  background: #14171c;
-  margin: 18px auto;
-  padding: 18px;
-  max-width: 680px;
-  border-radius: 10px;
-  border: 1px solid #1f242b;
+  background: #111317;
+  margin: 22px auto;
+  padding: 20px;
+  max-width: 760px;
+  border-radius: 12px;
+  border: 1px solid #1c2026;
+  transition: 0.18s ease;
+}
+
+.card:hover {
+  border-color: #2c323a;
 }
 
 .card .match {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  color: #f2f2f2;
 }
 
 .odds {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .odds div {
-  background: #1b1f26;
-  padding: 10px 14px;
+  background: #171a20;
+  padding: 12px 18px;
   border-radius: 8px;
   font-weight: 600;
-  color: #6ab8ff;
-  border: 1px solid #26303a;
+  color: #76c3ff;
+  border: 1px solid #222831;
+  transition: 0.15s;
+}
+
+.odds div:hover {
+  border-color: #76c3ff;
+  background: #1d2128;
 }
